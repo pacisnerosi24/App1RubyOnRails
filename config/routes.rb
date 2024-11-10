@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root "articles#index"
-
-  get "/articles", to: "articles#index"
+  root 'calculadora#index'   # Define la ruta principal
+  post 'calcular', to: 'calculadora#calcular'  # Define la ruta para el cálculo
 end
-

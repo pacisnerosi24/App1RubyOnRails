@@ -1,1 +1,24 @@
-<h1>Hello, Rails PROGRAMACION DIS 3!</h1>
+<h1>Calculadora de Suma y Resta</h1>
+
+<%= form_with url: calcular_path, method: :post, local: true, data: { turbo: false } do |form| %>
+  <div>
+    <label for="numero1">Número 1:</label>
+    <%= form.number_field :numero1 %>
+  </div>
+  <div>
+    <label for="numero2">Número 2:</label>
+    <%= form.number_field :numero2 %>
+  </div>
+  <div>
+    <%= form.radio_button :operacion, 'suma' %> Suma
+    <%= form.radio_button :operacion, 'resta' %> Resta
+  </div>
+  <div>
+    <%= form.submit 'Calcular' %>
+  </div>
+<% end %>
+
+<div>
+  <h2>Resultado:</h2>
+  <p id="resultado"><%= @resultado %></p>
+</div>
